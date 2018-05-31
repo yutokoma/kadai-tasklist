@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+    
 @section('content')
 
     <h1>メッセージ一覧</h1>
