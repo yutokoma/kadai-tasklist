@@ -10,6 +10,6 @@ protected $fillable = ['content', 'user_id'];
 
     public function task()
     {
-        return $this->belongsTo(Task::class);
+        return $this->belongsTo(User::class);
     }
 }

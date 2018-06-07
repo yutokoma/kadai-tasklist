@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Task;
+use App\User;
 
 class TasksController extends Controller
 {
@@ -22,22 +23,16 @@ class TasksController extends Controller
                 'user' => $user,
                 'tasks' => $tasks,
             ];
-            $data += $this->counts($user);
-            return view('tasks.show', $data);
-        }else {
-            return view('welcome');
+            
+           // $data += $this->counts($user);
+            return view('tasks.index', $data);
         }
+        else {
+            return view('welcome');
+        
+        }   
     }
-
     
-    public function create()
-    {
-        $task = new Task;
-
-        return view('tasks.create', [
-            'task' => $task,
-        ]);
-    }
 
     
     public function store(Request $request)
